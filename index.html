@@ -4,33 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Samantha Sison Portfolio</title>
+    
+    <!-- Connect Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
         <h2>Samantha Sison</h2>
         <nav>
-            <a href="#home">Home</a>
+            <a href="#hero">Home</a>
             <a href="#about">About</a>
-            <a href="#project">Projects</a>
+            <a href="#journey">Journey</a>
+            <a href="#projects">Projects</a>
+            <a href="#interests">Interests</a>
         </nav>
     </header>
+
     <main>
 
         <section id="hero">
             <span class="section-tag">S/S 2026 PROFESSIONAL PORTFOLIO</span>
-            <h1>Samantha Sison</h1>
+            <h1 class="hero-title">Samantha Sison</h1>
+            <p class="hero-editorial-lead">Future Finance & Technology Student</p>
             <p class="hero-roles">Deputy Head Girl • STEM • Software Developer • Community Leader</p>
-            <p>Future Finance & Technology Student</p>
-
-            <a href="#projects" class="hero-link">Explore My Journey</a>
-
+            <p class="hero-desc">Exploring the intersections of Finance & Technology</p>
+            <a href="#projects" class="hero-link">Explore My Journey →</a>
         </section>
         
         <section id="about" class="section-about">
-            <!-- span to target this specific tag (grey out later) - like vogue website 01 for sleek luxurious accent. -->
             <span class="section-tag">01 / Profile</span>
-        
             <div class="about">
                 <div class="about-txt">
                     <h2>Who is Samantha?</h2>
@@ -41,7 +48,6 @@
                 <div class="contribution">
                     <h3>Contribution</h3>
                     <ul class="contribution-list">
-                        <!-- again, example for my mvp, might completely get rid of later just so i can have something on the webpage to get feedback on -->
                         <li><strong> Role:</strong> Deputy Head Girl</li>
                         <li><strong> Public Speaking:</strong> Women in Business Speaker</li>
                         <li><strong> Service:</strong> STARS Peer Mentor & Group Leader</li>
@@ -54,7 +60,6 @@
 
         <section id="journey" class="section-journey">
             <span class="section-tag">02 / Journey</span>
-            <!-- might want to make specific class for this title later as want to add cool effects/fonts/animations later for interactivity, later as in sprint 2. -->
             <h2>My Journey</h2> 
             <div class="timeline">
                 <div class="timeline-element">
@@ -68,7 +73,7 @@
                     <div class="time-year">2026</div>
                     <div class="time-content">
                         <h4>Skyline ICT Internship</h4>
-                        <p>Built a Sentiment Analysis Web Application. </p>
+                        <p>Built a Sentiment Analysis Web Application.</p>
                     </div>
                 </div>
                 <div class="timeline-element">
@@ -91,7 +96,6 @@
         <section id="projects" class="section-proj">
             <span class="section-tag">03 / Projects</span>
             <h2>What I'm Building</h2>
-            <!-- again build on this further with actual info etc next sprint. -->
             <div class="proj-cards">
                 <div class="proj-card">
                     <div class="proj-img"><span class="proj-num">01</span></div>
@@ -103,7 +107,7 @@
                     <h3 class="proj-name">Sugar Rush Engine</h3>
                     <p class="proj-desc">...</p>
                 </div>
-                <article class="proj-card">
+                <div class="proj-card">
                     <div class="proj-img"><span class="proj-num">03</span></div>
                     <h3 class="proj-name">Wakatipu Youth Trust Website</h3>
                     <p class="proj-desc">...</p>
@@ -137,9 +141,9 @@
         <section id="quote" class="section-quote">
             <div class="quote-container">
                 <p class="txt">"Young women do not need permission to belong. We do not need to wait until we are older, louder, or more certain. Confidence is something we build by choosing to show up before we feel completely ready."</p>
-                <p class="sub-txt">......</p>
+                <p class="sub-txt">....</p>
             </div>
         </section>
-    
+    </main>
 </body>
 </html>

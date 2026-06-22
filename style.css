@@ -1,5 +1,13 @@
+:root {
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
 body {
     margin: 0;
+    font-family: var(--font-sans);
+    color: #222222;
+    line-height: 1.6;
 }
 
 header {
@@ -17,6 +25,11 @@ header, main section {
     padding: 60px 20px;
 }
 
+h1, h2, h3, .section-quote .txt {
+    font-family: var(--font-serif);
+    font-weight: 400;
+}
+
 nav a {
     margin-left: 20px;
     text-decoration: none;
@@ -32,6 +45,15 @@ nav a {
 
 h1{
     font-size: 64px;
+}
+
+.section-tag {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888888;
+    margin-bottom: 15px;
 }
 
 .about {

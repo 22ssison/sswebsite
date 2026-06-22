@@ -15,3 +15,9 @@ header {
 h1{
     font-size:4rem;
 }
+
+.about {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+}

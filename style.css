@@ -41,3 +41,15 @@ h1{
     margin-bottom: 10px;
     text-align: center;
 }
+
+.interests-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.interest-card {
+    background: #fafafa;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+}

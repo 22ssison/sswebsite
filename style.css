@@ -6,14 +6,32 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+header, main section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 #hero {
-    padding:100px;
+    padding: 100px;
 }
 
 h1{
-    font-size:4rem;
+    font-size: 64px;
 }
 
 .about {
@@ -66,7 +84,8 @@ h1{
 }
 
 .quote-container .txt {
-    font-size: 1.5rem;
+    font-size: 24px;
     font-style: italic;
     line-height: 1.6;
 }
+

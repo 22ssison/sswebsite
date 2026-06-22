@@ -28,3 +28,16 @@ h1{
     gap: 20px;
     margin-bottom: 20px;
 }
+
+.proj-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.proj-img {
+    background: #f0f0f0;
+    padding: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+}

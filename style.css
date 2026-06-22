@@ -53,3 +53,20 @@ h1{
     padding: 20px;
     border: 1px solid #eaeaea;
 }
+
+.section-quote {
+    padding: 120px 20px;
+    text-align: center;
+    background: #fdfdfd;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-container .txt {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.6;
+}

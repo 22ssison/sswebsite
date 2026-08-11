@@ -3,10 +3,17 @@
     --font-sans: 'Inter', sans-serif;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: var(--font-sans);
     color: #222222;
+    background: white;
     line-height: 1.6;
 }
 
@@ -19,6 +26,7 @@ header, main section {
     max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
+    /* left, right */
 }
 
 header {
@@ -28,6 +36,8 @@ header {
     padding-top: 30px;
     padding-bottom: 30px;
     border-bottom: 1px solid #eaeaea;
+    width: 100%;
+    height: 100%;
 }
 
 nav a {
@@ -37,6 +47,12 @@ nav a {
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* check why this is not working */
+nav a:hover {
+    opacity: 0.5;
+    color:#666;
 }
 
 /* Section Label Spans*/
@@ -126,16 +142,26 @@ nav a {
     padding: 40px;
     margin-bottom: 10px;
     text-align: center;
+    width: 100%;
+    border: 1px solid;
+    margin-bottom: 15px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+/* check if you target the class .proj card doesnt it automatically apply to all elements inside it, however in this case, it isnt doing it for the words. */
+.proj-card .proj-img:hover{
+    transform: translateY(-4px);
 }
 
 /*Interest Grid Cards */
-.interests-container {
+.contacts-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
-.interest-card {
+.contact-card {
     background: #fafafa;
     padding: 20px;
     border: 1px solid #eaeaea;
@@ -157,3 +183,8 @@ nav a {
     font-style: italic;
     line-height: 1.6;
 }
+
+/* Using image as background
+background-image: url(assets/IMG_3483.jpeg);
+background-size: cover;
+background-position: right; */

@@ -235,6 +235,32 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
+/* Filter Buttons */
+.filter-container {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid #111111;
+    padding: 8px 18px;
+    font-family: var(--font-sans);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #111111;
+    color: #ffffff;
+}
+
 /* Contacts Grid */
 .contacts-container {
     display: grid;

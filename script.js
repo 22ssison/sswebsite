@@ -37,3 +37,31 @@ function filterProjects(category) {
         }
     });
 }
+
+// Interactive Timeline
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineElements = document.querySelectorAll('.timeline-element');
+
+    timelineElements.forEach(element => {
+        element.style.cursor = 'pointer';
+        element.addEventListener('click', () => {
+            // Toggle highlight background on click
+            const isActive = element.classList.contains('active-timeline');
+            
+            // Clear all current active highlights
+            timelineElements.forEach(item => {
+                item.classList.remove('active-timeline');
+                item.style.backgroundColor = 'transparent';
+                item.style.paddingLeft = '0px';
+            });
+
+            // If not previously active, expand clicked element
+            if (!isActive) {
+                element.classList.add('active-timeline');
+                element.style.backgroundColor = '#fafafa';
+                element.style.paddingLeft = '15px';
+                element.style.transition = 'all 0.3s ease';
+            }
+        });
+    });
+});

@@ -1,4 +1,4 @@
-// Smooth scrolling for nav links
+// smooth scrolling for nav links
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('nav ul li a, .hero-link');
 
@@ -16,18 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Filter projects by category
+// filter projects by category
 function filterProjects(category) {
     const cards = document.querySelectorAll('.proj-card');
     const buttons = document.querySelectorAll('.filter-btn');
 
-    // Toggle active state on filter buttons as default
+    // toggle active state on filter buttons
     buttons.forEach(btn => btn.classList.remove('active'));
-    if (event && event.target) {
-        event.target.classList.add('active');
+    if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
     }
 
-    // Show or hide project cards based on category matching
+    // show or hide project cards based on category
     cards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
         if (category === 'all' || cardCategory === category) {
@@ -38,24 +38,21 @@ function filterProjects(category) {
     });
 }
 
-// Interactive Timeline
+// interactive timeline highlight
 document.addEventListener('DOMContentLoaded', () => {
     const timelineElements = document.querySelectorAll('.timeline-element');
 
     timelineElements.forEach(element => {
         element.style.cursor = 'pointer';
         element.addEventListener('click', () => {
-            // Toggle highlight background on click
             const isActive = element.classList.contains('active-timeline');
             
-            // Clear all current active highlights
             timelineElements.forEach(item => {
                 item.classList.remove('active-timeline');
                 item.style.backgroundColor = 'transparent';
                 item.style.paddingLeft = '0px';
             });
 
-            // If not previously active, expand clicked element
             if (!isActive) {
                 element.classList.add('active-timeline');
                 element.style.backgroundColor = '#fafafa';
@@ -63,5 +60,35 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.style.transition = 'all 0.3s ease';
             }
         });
+    });
+});
+
+// scrolling progress bar in the nav (loading)
+window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    const progressBar = document.getElementById('progress-bar');
+    if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+    }
+});
+
+// scroll reveal observer of user
+document.addEventListener('DOMContentLoaded', () => {
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.15
+    });
+
+    revealElements.forEach(el => {
+        observer.observe(el);
     });
 });

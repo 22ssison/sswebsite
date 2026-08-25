@@ -68,7 +68,26 @@ nav ul li a:hover {
     color: #666666;
 }
 
-/* Section Label Spans */
+/* --- Scroll progress bar --- */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background-color: #111111;
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+}
+
+/* --- section alternate background --- */
+.section-alternate {
+    background-image: url('./assets/CD-subtle-white-geometric-background.png');
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* section label */
 .section-tag {
     display: block;
     font-size: 12px;
@@ -78,7 +97,6 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-/* Hero Section */
 #hero {
     padding: 120px 20px;
 }
@@ -91,12 +109,6 @@ nav ul li a:hover {
 
 .hero-title span {
     font-style: italic;
-}
-
-.hero-editorial-lead {
-    font-size: 20px;
-    color: #555555;
-    margin-bottom: 10px;
 }
 
 .hero-roles {
@@ -126,7 +138,7 @@ nav ul li a:hover {
     opacity: 0.6;
 }
 
-/* Typewriter Animation for HEro */
+/* Typewriter animation*/
 .typewriter-container {
     display: inline-block;
 }
@@ -151,7 +163,7 @@ nav ul li a:hover {
     50% { border-color: #111111; }
 }
 
-/* About Section */
+/* About section */
 .about {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
@@ -192,7 +204,7 @@ nav ul li a:hover {
     color: #888888;
 }
 
-/* Projects Grid */
+/* Projects grid */
 .proj-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -201,12 +213,13 @@ nav ul li a:hover {
 }
 
 .proj-card {
-    transition: transform 0.3s ease;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .proj-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
 }
 
 .proj-img {
@@ -217,12 +230,19 @@ nav ul li a:hover {
     border: 1px solid #eaeaea;
     margin-bottom: 15px;
     position: relative;
+    overflow: hidden;
 }
 
 .proj-num {
     font-family: var(--font-serif);
     font-size: 28px;
     color: #bbbbbb;
+    display: inline-block;
+    transition: transform 0.5s ease;
+}
+
+.proj-card:hover .proj-num {
+    transform: scale(1.15);
 }
 
 .proj-name {
@@ -235,7 +255,7 @@ nav ul li a:hover {
     font-size: 14px;
 }
 
-/* Filter Buttons */
+/* Filtering buttons */
 .filter-container {
     display: flex;
     gap: 12px;
@@ -244,7 +264,8 @@ nav ul li a:hover {
 }
 
 .filter-btn {
-    background: transparent;
+    background-color: #ffffff;
+    color: #111111;
     border: 1px solid #111111;
     padding: 8px 18px;
     font-family: var(--font-sans);
@@ -252,17 +273,17 @@ nav ul li a:hover {
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
 .filter-btn:hover,
 .filter-btn.active {
-    background: #111111;
+    background-color: #111111;
     color: #ffffff;
 }
 
-/* Contacts Grid */
-.contacts-links {
+/* Contacts */
+.contacts-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -275,12 +296,13 @@ nav ul li a:hover {
     border: 1px solid #eaeaea;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.2s ease, background 0.2s ease;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 .contact-card:hover {
     border-color: #111111;
     background: #ffffff;
+    transform: translateY(-3px);
 }
 
 .contact-card h3 {
@@ -293,7 +315,7 @@ nav ul li a:hover {
     color: #777777;
 }
 
-/* Quote Section */
+/* Quote section */
 .section-quote {
     padding: 100px 20px;
     text-align: center;
@@ -320,7 +342,19 @@ nav ul li a:hover {
     color: #888888;
 }
 
-/* Mobile Responsiveness */
+/* Scroll reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -336,7 +370,7 @@ nav ul li a:hover {
         gap: 30px;
     }
 
-    .proj-cards, .contacts-links {
+    .proj-cards, .contacts-container {
         grid-template-columns: 1fr;
     }
 }

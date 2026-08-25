@@ -262,7 +262,7 @@ nav ul li a:hover {
 }
 
 /* Contacts Grid */
-.contacts-container {
+.contacts-links {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -336,7 +336,7 @@ nav ul li a:hover {
         gap: 30px;
     }
 
-    .proj-cards, .contacts-container {
+    .proj-cards, .contacts-links {
         grid-template-columns: 1fr;
     }
 }

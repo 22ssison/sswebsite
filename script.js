@@ -1,4 +1,4 @@
-// smooth scrolling for nav links
+// Smooth scrolling for nav links
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('nav ul li a, .hero-link');
 
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// filter projects by category
+// Filter projects by category
 function filterProjects(category) {
     const cards = document.querySelectorAll('.proj-card');
     const buttons = document.querySelectorAll('.filter-btn');
@@ -27,7 +27,7 @@ function filterProjects(category) {
         window.event.target.classList.add('active');
     }
 
-    // show or hide project cards based on category
+    // show/hide project cards based on category
     cards.forEach(card => {
         const cardCategory = card.getAttribute('data-category');
         if (category === 'all' || cardCategory === category) {
@@ -92,3 +92,4 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+

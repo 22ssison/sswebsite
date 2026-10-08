@@ -1,95 +1,84 @@
-// Smooth scrolling for nav links
-document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('nav ul li a, .hero-link');
+// Smooth scroll for nav links
+const navLinks = document.querySelectorAll('nav ul li a, .hero-link');
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href');
-            if (targetId.startsWith('#')) {
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
+for (let i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
             }
-        });
-    });
-});
-
-// Filter projects by category
-function filterProjects(category) {
-    const cards = document.querySelectorAll('.proj-card');
-    const buttons = document.querySelectorAll('.filter-btn');
-
-    // toggle active state on filter buttons
-    buttons.forEach(btn => btn.classList.remove('active'));
-    if (window.event && window.event.target) {
-        window.event.target.classList.add('active');
-    }
-
-    // show/hide project cards based on category
-    cards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        if (category === 'all' || cardCategory === category) {
-            card.style.display = 'block';
-        } else {
-            card.style.display = 'none';
         }
     });
 }
 
-// interactive timeline highlight
-document.addEventListener('DOMContentLoaded', () => {
-    const timelineElements = document.querySelectorAll('.timeline-element');
+// Filter project cards by category
+function filterProjects(category) {
+    const cards = document.querySelectorAll('.proj-card');
+    const buttons = document.querySelectorAll('.filter-btn');
 
-    timelineElements.forEach(element => {
-        element.style.cursor = 'pointer';
-        element.addEventListener('click', () => {
-            const isActive = element.classList.contains('active-timeline');
-            
-            timelineElements.forEach(item => {
-                item.classList.remove('active-timeline');
-                item.style.backgroundColor = 'transparent';
-                item.style.paddingLeft = '0px';
-            });
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+    if (window.event && window.event.target) {
+        window.event.target.classList.add('active');
+    }
 
-            if (!isActive) {
-                element.classList.add('active-timeline');
-                element.style.backgroundColor = '#fafafa';
-                element.style.paddingLeft = '15px';
-                element.style.transition = 'all 0.3s ease';
-            }
-        });
+    for (let i = 0; i < cards.length; i++) {
+        const cardCategory = cards[i].getAttribute('data-category');
+        if (category === 'all' || cardCategory === category) {
+            cards[i].style.display = 'block';
+        } else {
+            cards[i].style.display = 'none';
+        }
+    }
+}
+
+// Click highlight for timeline
+const timelineItems = document.querySelectorAll('.timeline-element');
+
+for (let i = 0; i < timelineItems.length; i++) {
+    timelineItems[i].style.cursor = 'pointer';
+    timelineItems[i].addEventListener('click', function() {
+        for (let j = 0; j < timelineItems.length; j++) {
+            timelineItems[j].style.backgroundColor = 'transparent';
+            timelineItems[j].style.paddingLeft = '0px';
+        }
+        this.style.backgroundColor = '#fafafa';
+        this.style.paddingLeft = '15px';
+        this.style.transition = 'all 0.3s ease';
     });
-});
+}
 
-// scrolling progress bar in the nav (loading)
-window.addEventListener('scroll', () => {
-    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
+// Scrolling progress bar
+window.addEventListener('scroll', function() {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const percentage = (scrollTop / totalHeight) * 100;
+    
     const progressBar = document.getElementById('progress-bar');
     if (progressBar) {
-        progressBar.style.width = scrolled + '%';
+        progressBar.style.width = percentage + '%';
     }
 });
 
-// scroll reveal observer of user
-document.addEventListener('DOMContentLoaded', () => {
+// Scroll reveal animation
+document.addEventListener('DOMContentLoaded', function() {
     const revealElements = document.querySelectorAll('.reveal');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+    const observer = new IntersectionObserver(function(entries) {
+        for (let i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) {
+                entries[i].target.classList.add('active');
             }
-        });
+        }
     }, {
         threshold: 0.15
     });
 
-    revealElements.forEach(el => {
-        observer.observe(el);
-    });
+    for (let i = 0; i < revealElements.length; i++) {
+        observer.observe(revealElements[i]);
+    }
 });
-

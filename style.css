@@ -281,14 +281,18 @@ nav ul li a:hover {
 }
 
 .proj-img {
-    background: #f0f0f0;
-    padding: 40px;
-    text-align: center;
     width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
     border: 1px solid #eaeaea;
     margin-bottom: 15px;
-    position: relative;
     overflow: hidden;
+}
+
+.proj-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Stop stretch */
 }
 
 .embeded-application {

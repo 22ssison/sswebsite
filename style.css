@@ -444,3 +444,31 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+.proj-img {
+    background: #f0f0f0;
+    width: 100%;
+    height: 200px; 
+    border: 1px solid #eaeaea;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    padding: 0; /* Remove padding so img fill container completely */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proj-img a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.proj-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop img to fit w/o stretch */
+    object-position: center; 
+    display: block;
+}

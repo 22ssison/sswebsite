@@ -11,7 +11,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80 px;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -98,18 +98,64 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
+/* Hero */
 #hero {
-    padding: 100px 20px;
+    padding: 60px 20px 100px 20px;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr; /* Text on left, image on right */
-    gap: 50px;
+    gap: 40px;
     align-items: center;
+}
+
+/* Remarkables Mountain */
+.hero-mountain-banner {
+    grid-column: 1 / -1;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    background: #ffffff;
+}
+
+.mountain-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.hero-mountain-banner:hover .mountain-img {
+    transform: translateY(-8px);
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.hero-title {
+    font-size: 64px;
+    margin: 15px 0;
+    line-height: 1.1;
+}
+
+/* animation appearing title text */
+.hero-title span.word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    margin-right: 12px;
+}
+
+.hero-title span.word.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Hero Vertical Rectangle */
@@ -122,11 +168,10 @@ nav ul li a:hover {
     justify-self: end;
 }
 
-/* Hero Image Styling */
 .hero-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops img rather than strench */
+    object-fit: cover;
     object-position: center;
     display: block;
     transition: transform 0.6s ease;
@@ -134,35 +179,6 @@ nav ul li a:hover {
 
 .hero-image-wrapper:hover .hero-img {
     transform: scale(1.03);
-}
-
-/* Mobile Responsiveness Adjustment */
-@media (max-width: 768px) {
-    #hero {
-        grid-template-columns: 1fr; /* Stacks text above image on small screens */
-        padding: 60px 20px;
-        gap: 40px;
-    }
-    
-    .hero-image-wrapper {
-        justify-self: center;
-        max-width: 100%;
-        height: 450px;
-    }
-}
-
-#hero {
-    padding: 120px 20px;
-}
-
-.hero-title {
-    font-size: 72px;
-    margin: 15px 0;
-    line-height: 1.1;
-}
-
-.hero-title span {
-    font-style: italic;
 }
 
 .hero-roles {
@@ -192,11 +208,7 @@ nav ul li a:hover {
     opacity: 0.6;
 }
 
-.hero img {
-
-}
-
-/* Typewriter animation*/
+/* Typewriter animation */
 .typewriter-container {
     display: inline-block;
 }
@@ -281,23 +293,36 @@ nav ul li a:hover {
 }
 
 .proj-img {
+    background: #f0f0f0;
     width: 100%;
-    height: 200px;
-    background-color: #f0f0f0;
+    height: 200px; 
     border: 1px solid #eaeaea;
     margin-bottom: 15px;
+    position: relative;
     overflow: hidden;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.proj-img a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .proj-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Stop stretch */
+    object-fit: cover;
+    object-position: center; 
+    display: block;
 }
 
 .embeded-application {
     width: 100%;
-    height: 250px; /* Gives the iframe a defined area like a card header image */
+    height: 250px;
     overflow: hidden;
 }
 
@@ -435,8 +460,24 @@ nav ul li a:hover {
         gap: 15px;
     }
 
+    #hero {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .hero-mountain-banner {
+        height: 100px;
+    }
+
     .hero-title {
-        font-size: 48px;
+        font-size: 42px;
+    }
+
+    .hero-image-wrapper {
+        justify-self: center;
+        max-width: 100%;
+        height: 420px;
     }
 
     .about {
@@ -447,58 +488,4 @@ nav ul li a:hover {
     .proj-cards, .contacts-container {
         grid-template-columns: 1fr;
     }
-}
-
-.proj-img {
-    background: #f0f0f0;
-    width: 100%;
-    height: 200px; 
-    border: 1px solid #eaeaea;
-    margin-bottom: 15px;
-    position: relative;
-    overflow: hidden;
-    padding: 0; /* Remove padding so img fill container completely */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.proj-img a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.proj-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Crop img to fit w/o stretch */
-    object-position: center; 
-    display: block;
-}
-
-/* Remarkables accent*/
-.remarkables-box {
-    text-align: center;
-    margin-top: 40px;
-    grid-column: span 2; 
-}
-
-.remarkables-img {
-    max-width: 300px;
-    height: auto;
-    transition: transform 0.3s;
-}
-
-/* Nudge up when hovered over */
-.remarkables-box:hover .remarkables-img {
-    transform: translateY(-5px);
-}
-
-.remarkables-text {
-    font-size: 12px;
-    color: #888888;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 5px;
 }

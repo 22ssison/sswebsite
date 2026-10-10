@@ -14,6 +14,29 @@ for (let i = 0; i < navLinks.length; i++) {
     });
 }
 
+// animation appear for hero text
+document.addEventListener('DOMContentLoaded', function() {
+    const titleElement = document.getElementById('word-by-word-title');
+    if (titleElement) {
+        const words = titleElement.innerText.split(' ');
+        titleElement.innerHTML = '';
+
+        for (let i = 0; i < words.length; i++) {
+            const span = document.createElement('span');
+            span.className = 'word';
+            span.innerText = words[i];
+            titleElement.appendChild(span);
+        }
+
+        const wordSpans = titleElement.querySelectorAll('.word');
+        for (let i = 0; i < wordSpans.length; i++) {
+            setTimeout(function() {
+                wordSpans[i].classList.add('visible');
+            }, i * 180);
+        }
+    }
+});
+
 // Filter project cards by category
 function filterProjects(category) {
     const cards = document.querySelectorAll('.proj-card');

@@ -18,7 +18,7 @@ for (let i = 0; i < navLinks.length; i++) {
 document.addEventListener('DOMContentLoaded', function() {
     const titleElement = document.getElementById('word-by-word-title');
     if (titleElement) {
-        // Define lines with word-level formatting
+        // Define lines with word level formattings
         const lines = [
             [{ text: "Kia", italic: false }, { text: "Ora,", italic: false }],
             [{ text: "I'm", italic: false }, { text: "Samantha", italic: true }, { text: "Sison", italic: true }],

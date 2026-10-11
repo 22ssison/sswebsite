@@ -33,7 +33,6 @@ header, main section {
     padding: 60px 20px;
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
@@ -97,38 +96,44 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
+/* Hero Section */
 #hero {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px 100px 20px;
+    padding: 20px 20px 100px 20px;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr; 
     gap: 40px;
-    align-items: center;
+    align-items: start;
+    position: relative;
 }
 
-.hero-mountain-full {
+.hero-mountain-banner {
     grid-column: 1 / -1;
     width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-bottom: 40px;
-    overflow: hidden;
-    background: #ffffff;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -20px;
+    margin-bottom: -80px; /* make sure content overlaps w the fade */
+    z-index: 1;
 }
 
 .mountain-img {
     width: 100%;
     height: auto;
-    max-height: 280px;
+    max-height: 380px;
     object-fit: cover;
-    object-position: center;
     display: block;
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+/* Ensure text and self-portrait sit on top of the mountain fade */
+.hero-content, 
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-title {
@@ -159,6 +164,7 @@ nav ul li a:hover {
     overflow: hidden;
     border: 1px solid #eaeaea;
     justify-self: end;
+    background: #ffffff;
 }
 
 .hero-img {
@@ -445,10 +451,6 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
         padding: 0 20px 40px 20px;
         gap: 30px;
-    }
-
-    .hero-mountain-full {
-        margin-bottom: 20px;
     }
 
     .hero-title {

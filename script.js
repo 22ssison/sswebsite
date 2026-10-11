@@ -18,22 +18,38 @@ for (let i = 0; i < navLinks.length; i++) {
 document.addEventListener('DOMContentLoaded', function() {
     const titleElement = document.getElementById('word-by-word-title');
     if (titleElement) {
-        const words = titleElement.innerText.split(' ');
+        // Define lines with word-level formatting
+        const lines = [
+            [{ text: "Kia", italic: false }, { text: "Ora,", italic: false }],
+            [{ text: "I'm", italic: false }, { text: "Samantha", italic: true }, { text: "Sison", italic: true }],
+            [{ text: "From", italic: false }, { text: "Queenstown", italic: false }]
+        ];
+
         titleElement.innerHTML = '';
+        let globalIndex = 0;
 
-        for (let i = 0; i < words.length; i++) {
-            const span = document.createElement('span');
-            span.className = 'word';
-            span.innerText = words[i];
-            titleElement.appendChild(span);
-        }
+        lines.forEach((lineWords, lineIndex) => {
+            if (lineIndex > 0) {
+                titleElement.appendChild(document.createElement('br'));
+            }
 
-        const wordSpans = titleElement.querySelectorAll('.word');
-        for (let i = 0; i < wordSpans.length; i++) {
-            setTimeout(function() {
-                wordSpans[i].classList.add('visible');
-            }, i * 180);
-        }
+            lineWords.forEach(wordData => {
+                const container = wordData.italic ? document.createElement('em') : document.createElement('span');
+                
+                const span = document.createElement('span');
+                span.className = 'word';
+                span.innerText = wordData.text + ' ';
+                
+                container.appendChild(span);
+                titleElement.appendChild(container);
+
+                setTimeout(function() {
+                    span.classList.add('visible');
+                }, globalIndex * 180);
+
+                globalIndex++;
+            });
+        });
     }
 });
 

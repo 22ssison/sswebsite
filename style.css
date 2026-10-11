@@ -117,7 +117,7 @@ nav ul li a:hover {
     margin-left: -50vw;
     margin-right: -50vw;
     margin-top: -20px;
-    margin-bottom: -80px; /* make sure content overlaps w the fade */
+    margin-bottom: -80px;
     z-index: 1;
 }
 
@@ -129,7 +129,6 @@ nav ul li a:hover {
     display: block;
 }
 
-/* Ensure text and self-portrait sit on top of the mountain fade */
 .hero-content, 
 .hero-image-wrapper {
     position: relative;
@@ -142,7 +141,19 @@ nav ul li a:hover {
     line-height: 1.1;
 }
 
-/* animation appearing title text */
+.hero-title em {
+    font-style: italic;
+    font-weight: 400;
+    color: #1a365d; 
+}
+
+.hero-editorial-lead {
+    font-size: 20px;
+    color: #555555;
+    margin-bottom: 10px;
+}
+
+/* Animation appearing title text (word by word) */
 .hero-title span.word {
     display: inline-block;
     opacity: 0;
@@ -205,31 +216,6 @@ nav ul li a:hover {
 
 .hero-link:hover {
     opacity: 0.6;
-}
-
-/* Typewriter animation */
-.typewriter-container {
-    display: inline-block;
-}
-
-.hero-editorial-lead {
-    font-size: 20px;
-    color: #555555;
-    margin-bottom: 10px;
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid #111111;
-    animation: typing 3s steps(35, end), blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: #111111; }
 }
 
 /* About section */

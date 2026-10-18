@@ -563,6 +563,7 @@ nav ul li a:hover {
     color: #ffffff;
     border-color: #1a365d;
     transform: scale(1.05);
+    z-index: 100; /* bring the hovered pill + tooltip to front */
 }
 
 .skill-tooltip {
@@ -578,7 +579,7 @@ nav ul li a:hover {
     padding: 4px 8px;
     border-radius: 4px;
     white-space: nowrap;
-    z-index: 10;
+    z-index: 101; /* tooltip always on top */
     transition: opacity 0.2s ease;
     pointer-events: none;
     letter-spacing: 0.5px;

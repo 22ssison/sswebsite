@@ -254,9 +254,50 @@ nav ul li a:hover {
     border-bottom: 1px solid #f0f0f0;
 }
 
+.timeline-element:hover {
+    border-color: #1a365d;
+    transform: translateX(5px);
+}
+
 .time-year {
     font-weight: 600;
     color: #888888;
+}
+
+.timeline-element h4 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.timeline-element p {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* Interactive Hobby Tags */
+.hobby-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.hobby-tag {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #ffffff;
+    border: 1px solid #111111;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hobby-tag:hover {
+    background: #1a365d;
+    color: #ffffff;
+    border-color: #1a365d;
 }
 
 /* Projects grid */

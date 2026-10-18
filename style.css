@@ -513,18 +513,18 @@ nav ul li a:hover {
     margin-right: 4px;
 }
 
-/* Skills & Tools section */
+/* Skills & Tools Section Layout */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin-top: 25px;
 }
 
 .skill-category {
     background: #ffffff;
     border: 1px solid #eaeaea;
-    padding: 20px;
+    padding: 25px;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
@@ -534,8 +534,8 @@ nav ul li a:hover {
 }
 
 .skill-category h3 {
-    font-size: 16px;
-    margin-bottom: 12px;
+    font-size: 18px;
+    margin-bottom: 15px;
     color: #1a365d;
 }
 
@@ -545,10 +545,13 @@ nav ul li a:hover {
     gap: 8px;
 }
 
+/* Individual Skill Pill & Instant Tooltip */
 .skill-pill {
-    font-size: 12px;
-    padding: 6px 12px;
-    background: #fafafa;
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    padding: 8px 16px;
+    background: #ffffff;
     border: 1px solid #dddddd;
     border-radius: 20px;
     cursor: pointer;
@@ -562,16 +565,34 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Tilt and zoom effects for cards & images */
-.proj-card, .contact-card, .about-credits-card {
-    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+.skill-tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111111;
+    color: #ffffff;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+    text-transform: none;
 }
 
-.proj-card:hover {
-    transform: translateY(-6px) rotate(0.5deg);
+.skill-pill:hover .skill-tooltip {
+    visibility: visible;
+    opacity: 0.9;
 }
 
-.contact-card:hover {
-    transform: translateY(-4px) rotate(-0.5deg);
-    border-color: #1a365d;
+/* mobile devices adaptation */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }

@@ -499,3 +499,79 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
     }
 }
+
+/* Interactive sparkle animation */
+@keyframes sparkleFade {
+    0%, 100% { opacity: 0.2; transform: scale(0.9); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.sparkle {
+    display: inline-block;
+    color: #1a365d;
+    animation: sparkleFade 2s infinite ease-in-out;
+    margin-right: 4px;
+}
+
+/* Skills & Tools section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.skill-category {
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    padding: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-4px);
+    border-color: #1a365d;
+}
+
+.skill-category h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #1a365d;
+}
+
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-pill {
+    font-size: 12px;
+    padding: 6px 12px;
+    background: #fafafa;
+    border: 1px solid #dddddd;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.skill-pill:hover {
+    background: #1a365d;
+    color: #ffffff;
+    border-color: #1a365d;
+    transform: scale(1.05);
+}
+
+/* Tilt and zoom effects for cards & images */
+.proj-card, .contact-card, .about-credits-card {
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.proj-card:hover {
+    transform: translateY(-6px) rotate(0.5deg);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px) rotate(-0.5deg);
+    border-color: #1a365d;
+}

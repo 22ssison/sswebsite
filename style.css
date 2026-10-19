@@ -137,6 +137,7 @@ nav ul li a:hover {
 .hero-image-wrapper {
     position: relative;
     z-index: 2;
+    transform: translateY(-80px); /* Adjust this value (e.g. -100px or -120px) to move it higher */
 }
 
 .hero-title {
@@ -600,4 +601,35 @@ nav ul li a:hover {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Hero belt chain */
+.hero-ticker-wrap {
+    width: 100%;
+    max-width: 500px; /* width constrain = to text column w */
+    overflow: hidden;
+    white-space: nowrap;
+    background: #1a365d;
+    color: #ffffff;
+    padding: 8px 12px;
+    margin: 15px 0 20px 0;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 3px;
+}
+
+.hero-ticker-move {
+    display: inline-block;
+    animation: tickerScroll 25s linear infinite;
+}
+
+.hero-ticker-move span {
+    padding-right: 30px;
+}
+
+@keyframes tickerScroll {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
 }
